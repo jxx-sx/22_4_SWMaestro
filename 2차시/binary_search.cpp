@@ -7,7 +7,7 @@ using namespace std;
 int arr[20];
 
 int find_num(int x) {
-    int lo = 0, hi = 20;
+    int lo = 0, hi = 19;
     int mid;
     while (lo <= hi) {
         mid = (lo + hi) / 2;
