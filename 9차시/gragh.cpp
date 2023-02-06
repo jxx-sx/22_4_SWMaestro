@@ -3,16 +3,17 @@
 
 using namespace std;
 
-vector<int> edges[20]; 
+vector<int> edges[20];
 bool is_visit[20];
 int n;
 
 void dfs(int now) {
-    cout << now;
-    is_visit[now] = true;
+    cout << now;          // 탐색을 통해 할 일
+    is_visit[now] = true; // 방문 체크
 
-    for (auto next : edges[now]) {
-        if (is_visit[next] == false)
+    for (auto next : edges[now]) {   // 연결되어있는 노드들 중에
+        if (is_visit[next] == false) // 다음 노드를 방문하지 않았다면 다음 노드를 방문
+                                     // if (!is_visit[next])
             dfs(next);
     }
 }
