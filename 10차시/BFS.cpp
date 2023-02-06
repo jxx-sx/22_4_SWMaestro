@@ -11,8 +11,8 @@ int n, m;
 
 void bfs(int start_Node) {
     // 시작 전 준비
-    q.push(start_Node);
-    q_distance.push(0);
+    q.push(start_Node); // 시작 노드 번호
+    q_distance.push(0); // 시작 노드 거리 = 0
     is_visit[start_Node] = true;
     // bfs 수행
     int cur; // 현재 탐색하는 노드 번호
@@ -25,8 +25,8 @@ void bfs(int start_Node) {
         // 인접한 노드를 큐에 추가
         for (auto next : edges[cur]) {
             if (!is_visit[next]) {
-                q.push(next);
-                q_distance.push(cur_distance + 1);
+                q.push(next);                      // 다음 노드 추가
+                q_distance.push(cur_distance + 1); // 다음 노드 거리 = 현재 노드 거리 + 1
                 is_visit[next] = true;
             }
         }
